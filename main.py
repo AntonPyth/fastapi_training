@@ -18,7 +18,7 @@ def hello_author():
 
 
 @app.post('/hello')
-def greetings(person: Person = Body(..., examples={...})) -> dict[str, str]:
+def greetings(person: Person = Body(...)) -> Dict[str, str]:
     if isinstance(person.surname, list):
         surnames = ' '.join(person.surname)
     else:
